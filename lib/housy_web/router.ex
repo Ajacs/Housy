@@ -20,7 +20,12 @@ defmodule HousyWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", HousyWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", HousyWeb do
+     pipe_through :api
+     resources "/users", UserController, except: [:new, :edit]
+     resources "/property_actions", PropertyActionController, except: [:new, :edit]
+     resources "/property_types", PropertyTypeController, except: [:new, :edit]
+     resources "/properties", PropertyController, except: [:new, :edit]
+     resources "/addresses", AddressController, except: [:new, :edit]
+   end
 end

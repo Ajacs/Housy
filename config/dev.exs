@@ -69,7 +69,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :housy, Housy.Repo,
   username: "postgres",
-  password: "",
+  password: "postgres",
   database: "housy_dev",
   hostname: "localhost",
   pool_size: 10
